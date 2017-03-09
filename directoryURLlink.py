@@ -11,7 +11,7 @@ def runCreateLinks(link):
         #print('the link is '+link)
         #print(os.getcwd()+'/index.html')
         if os.path.exists(os.getcwd()+'/index.html') or os.path.exists(os.getcwd()+'/index.htm'):
-            print('index will now be added to!')
+            print('index will now be updated!')
         else:
             f = open('index.html', 'w+')
             f.write('<!DOCTYPE html>\n <html>\n <body> \n  </body> \n </html> ')
@@ -33,11 +33,11 @@ def runCreateLinks(link):
         f.write('<p>\n')
         #        f.write('<font size="5"><A HREF = "'+ url + str(PathLink) + '/' + directory + '">' + directory.split('.htm')[0].replace("_"," ") + '</A></font>')
         wikiprotpath = str(os.environ['WIKIPROTPATH'])
-        print(os.path.abspath(directory))
-        print('\n')
-        print(os.environ['WIKIPROTPATH'].split('/'))
+        #print(os.path.abspath(directory))
+        #print('\n')
+        #print(os.environ['WIKIPROTPATH'].split('/'))
         #print('\n'+os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-1])
-        print(os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2]))
+        #print(os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2]))
 
         f.write('<font size="5"><A HREF = "' + str(link)+'/'+os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2] + os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2])[1] + '">' + directory.split('.htm')[0].replace("_", " ") + '</A></font>\n </p> \n')
         f.write('</body>\n')
