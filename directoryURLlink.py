@@ -32,9 +32,14 @@ def runCreateLinks(link):
         f.write(R[0])
         f.write('<p>\n')
         #        f.write('<font size="5"><A HREF = "'+ url + str(PathLink) + '/' + directory + '">' + directory.split('.htm')[0].replace("_"," ") + '</A></font>')
-        print(os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-1]))
+        wikiprotpath = str(os.environ['WIKIPROTPATH'])
+        print(os.path.abspath(directory))
+        print('\n')
+        print(os.environ['WIKIPROTPATH'].split('/'))
+        #print('\n'+os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-1])
+        print(os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2]))
 
-        f.write('<font size="5"><A HREF = "' + str(link)+'/'+os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-1] + os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-1])[1] + '">' + directory.split('.htm')[0].replace("_", " ") + '</A></font>\n </p> \n')
+        f.write('<font size="5"><A HREF = "' + str(link)+'/'+os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2] + os.path.abspath(directory).split(os.environ['WIKIPROTPATH'].split('/')[len(os.environ['WIKIPROTPATH'].split('/'))-2])[1] + '">' + directory.split('.htm')[0].replace("_", " ") + '</A></font>\n </p> \n')
         f.write('</body>\n')
         f.write('</html>\n')
 

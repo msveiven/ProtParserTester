@@ -31,8 +31,9 @@ else:
 
 
 def ProtParser(series):
-    if os.path.exists(os.getcwd()+'/'+series) == False:
-        print(os.getcwd()+series)
+    if os.path.exists(series) != True:
+        #print(os.path.exists(series))
+        print(series+'\n')
         print(series+' does not exist in current working directory')
         sys.exit()
     tree = ET.parse(series)  # uses ET function on the xml file
@@ -510,6 +511,8 @@ else:
     if xmlfile.endswith('.xml'):
         ProtParser(sys.argv[1])
     else:
-        print('File name must end in .xml')
+        print('File name must end in .xml. ')
+        print('If you would like all .xml files parsed in all directories type "python $WIKIPROTPATH/ProtParser.py all_directories".')
+        print('If you would like all the .xml files parsed in a single directory. Go to that directory and type "python $WIKIPROTPATH/ProtParser.py all".')
 
 
